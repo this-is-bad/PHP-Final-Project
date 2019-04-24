@@ -1,0 +1,25 @@
+USE forumdb;
+
+CREATE TABLE subjects (
+    subject_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    subject_title VARCHAR (150),
+    subject_create_time DATETIME,
+    subject_owner VARCHAR (150)
+);
+
+CREATE TABLE replies (
+    reply_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    subject_id INT NOT NULL,
+    reply_text TEXT,
+    reply_create_time DATETIME,
+    reply_owner VARCHAR (150)
+);
+
+CREATE TABLE auth_users (
+    id int NOT NULL PRIMARY KEY,
+    f_name VARCHAR(50),
+    l_name VARCHAR(50),
+    email VARCHAR(150),
+    username VARCHAR(25),
+    password VARCHAR(41)
+);
